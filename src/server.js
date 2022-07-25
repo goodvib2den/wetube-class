@@ -8,7 +8,12 @@ const handleHome = (req, res) => {
   return res.send("res를 보내봅니다!");
 };
 
+const handleLogin = (req, res) => {
+  return res.send("이 곳은 로그인 페이지입니다!");
+};
+
 app.get("/", handleHome);
+app.get("/login", handleLogin);
 
 const handleListening = () =>
   console.log(`✅Server Litening on port http://localhost:${PORT}`);

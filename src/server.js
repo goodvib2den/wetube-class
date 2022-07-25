@@ -4,7 +4,9 @@ const PORT = 4000;
 
 const app = express();
 
-const handleHome = () => console.log("누군가 접근을 시도중입니다.");
+const handleHome = (req, res) => {
+  return res.send("res를 보내봅니다!");
+};
 
 app.get("/", handleHome);
 

@@ -5,7 +5,7 @@ const PORT = 4000;
 const app = express();
 
 const handleHome = (req, res) => {
-  return res.send("res를 보내봅니다!");
+  return res.send("<h1>res를 보내봅니다!</h1>");
 };
 
 const handleLogin = (req, res) => {

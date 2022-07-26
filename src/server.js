@@ -4,16 +4,16 @@ const PORT = 4000;
 
 const app = express();
 
+const gossipMiddleware = (req, res, next) => {
+  console.log(`Someone is going to : ${req.url}`);
+  next();
+};
+
 const handleHome = (req, res) => {
-  return res.send("<h1>res를 보내봅니다!</h1>");
+  return res.send("it is TEST page");
 };
 
-const handleLogin = (req, res) => {
-  return res.send("이 곳은 로그인 페이지입니다!");
-};
-
-app.get("/", handleHome);
-app.get("/login", handleLogin);
+app.get("/", gossipMiddleware, handleHome);
 
 const handleListening = () =>
   console.log(`✅Server Litening on port http://localhost:${PORT}`);
